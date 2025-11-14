@@ -21,12 +21,20 @@ data <- palmerpenguins::penguins
 ```
 
 ```{r}
-#| label: fig-height-effect
-#| fig-cap: height of Bistorta vivipara for ambient and warm treatment
+#| label: subset sample
+dream <- data %>%
+  filter(
+        island == "Dream"
+      )
+```
+
+```{r}
+#| label: figure
+#| fig-cap: weight of penguins by sex
 #| fig-height: 5.2
 
-ggplot(bistorta_height, aes(x = Treatment, y = Value)) +
-  geom_boxplot(fill = "grey80") +
-  labs(x = "Treatment", y = "Height cm")
+ggplot(dream, aes(x = sex, y = body_mass_g, fill = species)) +
+  geom_jitter(aes(color = species)) +
+  labs(x = "sex", y = "body mass (g)")
 ```
 
