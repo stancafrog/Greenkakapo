@@ -8,4 +8,4 @@ dream <- data %>%
   filter(
         island == "Dream"
       )
-#wtf
+head(dream)
