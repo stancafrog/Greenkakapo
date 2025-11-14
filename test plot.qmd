@@ -30,7 +30,7 @@ dream <- data %>%
 
 ```{r}
 #| label: figure
-#| fig-cap: weight of penguins by sex
+#| fig-cap: weight of penguins by sex whatever
 #| fig-height: 5.2
 
 ggplot(dream, aes(x = sex, y = body_mass_g, fill = species)) +
