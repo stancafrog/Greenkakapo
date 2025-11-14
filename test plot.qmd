@@ -5,23 +5,28 @@ editor: visual
 date: today
 ---
 
-## Quarto
+## Create a plot
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
+# Require libraries
 ```{r}
-1 + 1
+#|label: libraries
+library(dplyr)
+library(ggplot2)
 ```
 
-You can add options to executable code like this
-
 ```{r}
-#| echo: false
-2 * 2
+#| label: import data
+#get palmerpenguins data
+data <- palmerpenguins::penguins
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+#| label: fig-height-effect
+#| fig-cap: height of Bistorta vivipara for ambient and warm treatment
+#| fig-height: 5.2
+
+ggplot(bistorta_height, aes(x = Treatment, y = Value)) +
+  geom_boxplot(fill = "grey80") +
+  labs(x = "Treatment", y = "Height cm")
+```
+
