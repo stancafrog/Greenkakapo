@@ -39,3 +39,4 @@ ggplot(dream, aes(x = sex, y = body_mass_g, fill = species)) +
   geom_jitter(aes(color = species)) +
   labs(x = "sex", y = "body mass (g)")
 ```
+create a conflict 
